@@ -2,8 +2,8 @@
   - name: Provision an EC2 Instance
     local_action:
       module: ec2
-      aws_access_key: AKIAJ5GUSK23ZQB3UYBQ
-      aws_secret_key: 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
+      aws_access_key: 
+      aws_secret_key: 
       key_name: MKK
       instance_type: m3.medium
       image: ami-97785bed
