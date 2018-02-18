@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: EC2 basic provisioning
+      ec2:
+        aws_access_key: AKIAJHG2JR4CW7QIPX7Q
+        aws_secret_key: 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
+        state: absent
+        instance_ids: i-037bb7aeb2b7e60da
+        key_name: MKK
+        instance_type: m3.medium
+        image: ami-97785bed
+        wait: yes
+      #ec2_tag_Name: webserver
+        count: 1
+        vpc_subnet_id: subnet-cb451580
+        region: us-east-1
+        instance_tags:
+           Name: che
+        assign_public_ip: no

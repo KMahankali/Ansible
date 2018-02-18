@@ -1,0 +1,21 @@
+#sample playbook defining tasks in the same file
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: EC2 basic provisioning
+      ec2:
+        aws_access_key: AKIAJ5GUSK23ZQB3UYBQ
+        aws_secret_key: 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
+        key_name: MKK
+        instance_type: m3.medium
+        image: ami-97785bed
+        wait: yes
+      #ec2_tag_Name: webserver
+        count: 1
+        vpc_subnet_id: subnet-cb451580
+        region: us-east-1
+        instance_tags:
+           Name: che
+        assign_public_ip: no
